@@ -1,0 +1,15 @@
+{
+  "name": "garmin-import",
+  "version": "1.0.0",
+  "description": "Import manual activities in Garmin Connect. Reads activities from csv file on the format: name;type;dateTime;duration;distance;note",
+  "main": "garmin-import.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joel Ottosson",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.20.0",
+    "puppeteer": "^1.15.0"
+  }
+}
