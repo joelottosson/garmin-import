@@ -36,14 +36,14 @@ class ActivityImporter {
         this.numberOfImported++;
       } catch (err) {
         console.log('Failed to import activity:\n' + JSON.stringify(activity));
-        const elapsedSec = Math.round((new Date() - startTime)/1000);
+        const elapsedSec = Math.round((new Date() - startTime) / 1000);
         console.log(`Number of imported activities: ${this.numberOfImported} in ${elapsedSec} sec.`);
         throw err;
       }
     }
     await this.page.waitFor(3000);
     await this.browser.close();
-    const elapsedSec = Math.round((new Date() - startTime)/1000);
+    const elapsedSec = Math.round((new Date() - startTime) / 1000);
     console.log(`Number of imported activities: ${this.numberOfImported} in ${elapsedSec} sec.`);
   }
 
@@ -74,7 +74,7 @@ class ActivityImporter {
 
     // Click save button
     await this.page.click(this.selectors.save)
-    
+
     // Wait until activity has been registered, we assume its done when activity input is no longer visible
     await this.page.waitFor((selector) => !document.querySelector(selector), this.selectors.activityName);
   }
@@ -112,7 +112,7 @@ class ActivityImporter {
     await this.page.focus(selector);
     await this.page.keyboard.press('Delete');
     await this.page.keyboard.press('Delete');
-    await this.page.keyboard.press('End');    
+    await this.page.keyboard.press('End');
     await this.page.keyboard.press('Backspace');
     await this.page.keyboard.press('Backspace');
     await this.page.keyboard.type(val);
